@@ -8,23 +8,42 @@
 # imprimir_mensaje()
 # imprimir_mensaje()
 
+# #### Mi forma ####
+# #Función
+# def conversacion(x):
+#     print("Hola")
+#     print("Cómo estas ?")
+#     print("Elegiste la opción " + x)
+#     print("Adios")
 
-opcion = int(input("Elige una opción (1, 2, 3):"))
+# #Usuario elige su opción
+# opcion = input("Elige una opción (1, 2, 3):")
 
+# #Mensaje mostrado al usuario
+# conversacion(x = opcion)
+
+
+### Instructor ###
+
+#Función
+def conversacion(x):
+    print("Hola")
+    print("Cómo estas ?")
+    print("Elegiste la opción " + x)
+    print("Adios")
+
+#Usuario elige su opción
+opcion = int(input("Elige una opción (1, 2, 3): "))
+
+#Print del mensaje
 if opcion == 1:
-    print("Hola")
-    print("Cómo estas ?")
-    print("Elegiste la opción 1")
-    print("Adios")
+    conversacion(x = str(opcion))
 elif opcion == 2:
-    print("Hola")
-    print("Cómo estas ?")
-    print("Elegiste la opción 2")
-    print("Adios")
+    conversacion(x = str(opcion))
 elif opcion == 3:
-    print("Hola")
-    print("Cómo estas ?")
-    print("Elegiste la opción 3")
-    print("Adios")
+    conversacion(x = str(opcion))
 else:
-    print("Elige entre (1, 2, 3)")
+    opcion = input("Debes elegir entre (1, 2, 3): ")
+    conversacion(x = str(opcion))
+
+

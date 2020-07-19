@@ -27,7 +27,7 @@ def es_primo(y):
 def count():
     numero = int(input("¿Hasta que número quieres hacer la prueba?: "))
 
-    for y in range (numero + 1):
+    for y in range (numero):
         y += 1
         
         if es_primo(y):

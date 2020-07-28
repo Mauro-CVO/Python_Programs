@@ -16,9 +16,15 @@ from math import gcd
 
 def getTotalX(a, b):
     count = 0
+    a = sorted(a)
+    #print(a)
     lcm = a[0]
-    for i in a[1:]:
-        lcm = lcm * i/ gcd(lcm, i)
+    if len(a) == 1:
+      lcm = a[0]
+    else:
+      for i in a[1:]:
+        lcm = int(lcm * i/ gcd(lcm, i))
+    print(f"lcm = {lcm} {type(lcm)}")
     for j in b:
         if j % lcm == 0:
             count += 1

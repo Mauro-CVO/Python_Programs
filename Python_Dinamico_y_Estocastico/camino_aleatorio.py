@@ -3,6 +3,7 @@ from borrachos import BorrachoTradicional
 from campo import Campo
 from coordenada import Coordenada
 
+
 def caminata(campo, borracho, pasos):
     inicio = campo.obtener_coordenada(borracho)
 

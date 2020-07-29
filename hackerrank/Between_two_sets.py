@@ -12,25 +12,25 @@ import sys
 #  1. INTEGER_ARRAY a
 #  2. INTEGER_ARRAY b
 #
-from math import gcd
+from functools import reduce
 
 def getTotalX(a, b):
-    count = 0
-    a = sorted(a)
-    #print(a)
-    lcm = a[0]
-    if len(a) == 1:
-      lcm = a[0]
-    else:
-      for i in a[1:]:
-        lcm = int(lcm * i/ gcd(lcm, i))
-    print(f"lcm = {lcm} {type(lcm)}")
-    for j in b:
-        if j % lcm == 0:
-            count += 1
-        else:
-            continue
-    print(count)
+    def gcd(a,b):
+      if b == 0:
+         return a
+      return gcd(b, a%b)
+    
+    def lcm(a, b):
+        return a*b // gcd(a,b)
+    
+    l = reduce(lcm, a)
+    g = reduce(gcd, b)
+
+    s = 0
+    for i in range(l, g+1, l):
+      if g % i == 0:
+        s += 1
+    print(s)
     
 
 if __name__ == '__main__':
